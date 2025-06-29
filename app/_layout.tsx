@@ -1,12 +1,13 @@
-import { Stack } from 'expo-router';
-
+import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import "@/global.css";
-import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
+import { Stack } from 'expo-router';
 
 export default function RootLayout() {
   return (
-    <GluestackUIProvider mode="light"><Stack>
+    <ThemeProvider>
+      <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack></GluestackUIProvider>
+      </Stack>
+    </ThemeProvider>
   );
 }
