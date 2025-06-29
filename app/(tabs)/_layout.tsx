@@ -1,8 +1,8 @@
+import { Button, ButtonText } from '@/components/ui/button';
 import { useTheme } from '@/components/ui/ThemeProvider';
 import { useAuth } from '@/context/auth/AuthProvider';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from 'expo-router';
-import { Pressable, Text } from 'react-native';
 
 export default function TabLayout() {
   const { logout } = useAuth();
@@ -11,24 +11,23 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'rgb(251 157 75)', // tertiary-500 for light mode
+        tabBarActiveTintColor: 'var(--color-tertiary-400)', // tertiary-400 for light mode
         headerStyle: {
-          backgroundColor: theme === 'dark' ? 'rgb(31 31 31)' : 'rgb(255 255 255)', // secondary-100 for dark, background-0 for light
+          backgroundColor: theme === 'dark' ? 'var(--color-secondary-100)' : 'var(--color-background-0)',
         },
         headerShadowVisible: false,
-        headerTintColor: theme === 'dark' ? 'rgb(230 230 230)' : 'rgb(51 51 51)', // primary-500 for both modes
+        headerTintColor: theme === 'dark' ? 'var(--color-primary-500)' : 'var(--color-primary-500)',
         tabBarStyle: {
-          backgroundColor: theme === 'dark' ? 'rgb(31 31 31)' : 'rgb(255 255 255)', // secondary-100 for dark, background-0 for light
+          backgroundColor: theme === 'dark' ? 'var(--color-secondary-100)' : 'var(--color-background-0)',
         },
         headerRight: () => (
-          <Pressable
+          <Button
+            variant="link"
             onPress={logout}
-            style={{ marginRight: 15 }}
+            className="mr-4"
           >
-            <Text style={{ color: 'rgb(251 157 75)', fontSize: 16, fontWeight: '600' }}> {/* tertiary-500 */}
-              Logout
-            </Text>
-          </Pressable>
+            <ButtonText>Logout</ButtonText>
+          </Button>
         ),
       }}
     >

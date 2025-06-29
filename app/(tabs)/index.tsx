@@ -1,20 +1,25 @@
+import { Button, ButtonText } from '@/components/ui/button';
 import { Heading } from "@/components/ui/heading";
 import { useTheme } from "@/components/ui/ThemeProvider";
-import { Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 export default function Index() {
   const { theme } = useTheme();
+  const router = useRouter();
 
   return (
-    <View style={[styles.container, { backgroundColor: theme === 'dark' ? '#25292e' : '#ffffff' }]}>
-      <Heading size="3xl" className={theme === 'dark' ? 'text-white' : 'text-black'}>
+    <View style={[styles.container, { backgroundColor: theme === 'dark' ? 'var(--color-secondary-100)' : 'var(--color-background-0)' }]}>
+      <Heading size="3xl" className={theme === 'dark' ? 'text-typography-0' : 'text-typography-900'}>
         Home screen
       </Heading>
       
-      <Link href="/about" style={[styles.button, { color: theme === 'dark' ? '#fff' : '#25292e' }]}>
-        Go to About screen
-      </Link>
+      <Button 
+        variant="link"
+        onPress={() => router.push('/about')}
+      >
+        <ButtonText>Go to About screen</ButtonText>
+      </Button>
 
       {/* Theme toggle button temporarily removed - will be re-enabled when dark mode is implemented
       <Pressable 
