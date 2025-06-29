@@ -1,9 +1,10 @@
 import { Button, ButtonText } from '@/components/ui/button';
+import { Heading } from '@/components/ui/heading';
 import { useTheme } from '@/components/ui/ThemeProvider';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'expo-router';
 import { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default function LoginScreen() {
   const { isAuthenticated, login } = useAuth();
@@ -19,14 +20,14 @@ export default function LoginScreen() {
   return (
     <View style={[
       styles.container,
-      { backgroundColor: theme === 'dark' ? 'var(--color-secondary-0)' : 'var(--color-background-0)' }
+      { backgroundColor: 'var(--color-background-0)' }
     ]}>
-      <Text style={[
-        styles.title,
-        { color: theme === 'dark' ? 'var(--color-primary-500)' : 'var(--color-primary-500)' }
-      ]}>
-        Welcome
-      </Text>
+      <Heading 
+        size="2xl"
+        className="text-typography-900"
+      >
+        Login to your account
+      </Heading>
       <Button 
         size="xl"
         variant="solid"
@@ -45,10 +46,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     gap: 20,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 20,
   }
 }); 

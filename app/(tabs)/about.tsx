@@ -1,5 +1,6 @@
+import { Heading } from "@/components/ui/heading";
 import { useTheme } from "@/components/ui/ThemeProvider";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function AboutScreen() {
   const { theme } = useTheme();
@@ -7,14 +8,14 @@ export default function AboutScreen() {
   return (
     <View style={[
       styles.container, 
-      { backgroundColor: theme === 'dark' ? 'rgb(31 31 31)' : 'rgb(255 255 255)' } // secondary-100 for dark, background-0 for light
+      { backgroundColor: 'var(--color-background-0)' }
     ]}>
-      <Text style={[
-        styles.text, 
-        { color: theme === 'dark' ? 'rgb(230 230 230)' : 'rgb(51 51 51)' } // primary-500 for both modes
-      ]}>
+      <Heading 
+        size="2xl"
+        className="text-typography-900"
+      >
         About screen
-      </Text>
+      </Heading>
     </View>
   );
 }
@@ -24,8 +25,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  text: {
-    fontSize: 16,
-  },
+  }
 });

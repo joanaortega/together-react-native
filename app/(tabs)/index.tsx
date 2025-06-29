@@ -9,8 +9,11 @@ export default function Index() {
   const router = useRouter();
 
   return (
-    <View style={[styles.container, { backgroundColor: theme === 'dark' ? 'var(--color-secondary-100)' : 'var(--color-background-0)' }]}>
-      <Heading size="3xl" className={theme === 'dark' ? 'text-typography-0' : 'text-typography-900'}>
+    <View style={[styles.container, { backgroundColor: 'var(--color-background-0)' }]}>
+      <Heading 
+        size="2xl"
+        className="text-typography-900"
+      >
         Home screen
       </Heading>
       
