@@ -2,16 +2,14 @@ import { Button, ButtonText } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { HStack } from '@/components/ui/hstack';
 import { Text } from '@/components/ui/text';
-import { useTheme } from '@/components/ui/ThemeProvider';
 import { VStack } from '@/components/ui/vstack';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { Link, useRouter } from 'expo-router';
 import { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-export default function LoginScreen() {
-  const { isAuthenticated, login } = useAuth();
-  const { theme } = useTheme();
+export default function SignupScreen() {
+  const { isAuthenticated, signup } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -27,15 +25,15 @@ export default function LoginScreen() {
     ]}>
       <VStack space="sm" style={styles.fullWidth}>
         <Heading size="2xl" className="text-typography-900">
-          Login to your account
+          Create an account
         </Heading>
-        <HStack space="xs">
+        <HStack space="xs" alignItems="center">
           <Text size="lg" className="text-typography-600">
-            Don't have an account?
+            Already have an account?
           </Text>
-          <Link href="/signup" asChild>
+          <Link href="/login" asChild>
             <Text size="lg" className="text-tertiary-400">
-              Sign up
+              Log in
             </Text>
           </Link>
         </HStack>
@@ -44,10 +42,10 @@ export default function LoginScreen() {
         size="xl"
         variant="solid"
         action="primary"
-        onPress={login}
+        onPress={signup}
         style={styles.fullWidth}
       >
-        <ButtonText>Log In</ButtonText>
+        <ButtonText>Create Account</ButtonText>
       </Button>
     </View>
   );
