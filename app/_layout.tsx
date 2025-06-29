@@ -1,5 +1,5 @@
-import { AuthProvider, useAuth } from "@/components/ui/AuthProvider";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import { AuthProvider, useAuth } from "@/context/auth/AuthProvider";
 import "@/global.css";
 import { Slot, useRouter, useSegments } from 'expo-router';
 import { useEffect } from "react";

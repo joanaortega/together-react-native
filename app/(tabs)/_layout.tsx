@@ -1,4 +1,4 @@
-import { useAuth } from '@/components/ui/AuthProvider';
+import { useAuth } from '@/context/auth/AuthProvider';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Tabs } from 'expo-router';
 import { Pressable, Text } from 'react-native';
