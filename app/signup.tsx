@@ -27,12 +27,12 @@ export default function SignupScreen() {
         <Heading size="2xl" className="text-typography-900">
           Create an account
         </Heading>
-        <HStack space="xs" alignItems="center">
-          <Text size="lg" className="text-typography-600">
+        <HStack space="xs">
+          <Text size="xl" className="text-typography-600">
             Already have an account?
           </Text>
           <Link href="/login" asChild>
-            <Text size="lg" className="text-tertiary-400">
+            <Text size="xl" className="text-colour-accent-0 cursor-pointer">
               Log in
             </Text>
           </Link>

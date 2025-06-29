@@ -1,4 +1,3 @@
-import { Button, ButtonText } from '@/components/ui/button';
 import { Heading } from "@/components/ui/heading";
 import { useTheme } from "@/components/ui/ThemeProvider";
 import { useRouter } from 'expo-router';
@@ -16,13 +15,6 @@ export default function Index() {
       >
         Home screen
       </Heading>
-      
-      <Button 
-        variant="link"
-        onPress={() => router.push('/about')}
-      >
-        <ButtonText>Go to About screen</ButtonText>
-      </Button>
 
       {/* Theme toggle button temporarily removed - will be re-enabled when dark mode is implemented
       <Pressable 

@@ -29,12 +29,12 @@ export default function LoginScreen() {
         <Heading size="2xl" className="text-typography-900">
           Login to your account
         </Heading>
-        <HStack space="xs">
-          <Text size="lg" className="text-typography-600">
+        <HStack space="sm">
+          <Text size="xl" className="text-typography-600">
             Don't have an account?
           </Text>
           <Link href="/signup" asChild>
-            <Text size="lg" className="text-tertiary-400">
+            <Text size="xl" className="text-colour-accent-0 cursor-pointer">
               Sign up
             </Text>
           </Link>

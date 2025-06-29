@@ -44,6 +44,9 @@ export const config = {
     '--color-tertiary-900': '108 61 19',
     '--color-tertiary-950': '84 49 18',
 
+    /* Custom accents */
+    '--color-accent-0': '221 25 54',  // #DD1936
+
     /* Error */
     '--color-error-0': '254 233 233',
     '--color-error-50': '254 226 226',
@@ -195,6 +198,9 @@ export const config = {
     '--color-tertiary-800': '255 233 213',
     '--color-tertiary-900': '255 242 229',
     '--color-tertiary-950': '255 250 245',
+
+    /* Custom accents */
+    '--color-accent-0': '221 25 54',  // #DD1936
 
     /* Error */
     '--color-error-0': '83 19 19',
