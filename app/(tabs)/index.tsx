@@ -1,10 +1,10 @@
 import { Heading } from "@/components/ui/heading";
 import { useTheme } from "@/components/ui/ThemeProvider";
 import { Link } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default function Index() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: theme === 'dark' ? '#25292e' : '#ffffff' }]}>
@@ -16,6 +16,7 @@ export default function Index() {
         Go to About screen
       </Link>
 
+      {/* Theme toggle button temporarily removed - will be re-enabled when dark mode is implemented
       <Pressable 
         onPress={toggleTheme}
         style={[styles.themeButton, { backgroundColor: theme === 'dark' ? '#ffffff' : '#25292e' }]}
@@ -24,6 +25,7 @@ export default function Index() {
           Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
         </Text>
       </Pressable>
+      */}
     </View>
   );
 }

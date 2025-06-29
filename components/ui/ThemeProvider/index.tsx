@@ -1,6 +1,5 @@
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext } from "react";
 
 type Theme = "light" | "dark";
 
@@ -12,6 +11,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  // Temporarily hardcoded to light mode to reduce scope - will implement dark mode later
+  const theme: Theme = "light";
+  const toggleTheme = () => {};
+
+  /* Theme switching functionality commented out to reduce initial scope
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
@@ -36,6 +40,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       console.error("Error saving theme:", error);
     }
   };
+  */
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
