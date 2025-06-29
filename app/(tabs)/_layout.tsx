@@ -1,11 +1,14 @@
-import { Tabs } from 'expo-router';
-
+import { useAuth } from '@/components/ui/AuthProvider';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Tabs } from 'expo-router';
+import { Pressable, Text } from 'react-native';
 
 export default function TabLayout() {
+  const { logout } = useAuth();
+
   return (
     <Tabs
-        screenOptions={{
+      screenOptions={{
         tabBarActiveTintColor: '#ffd33d',
         headerStyle: {
           backgroundColor: '#25292e',
@@ -15,6 +18,16 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: '#25292e',
         },
+        headerRight: () => (
+          <Pressable
+            onPress={logout}
+            style={{ marginRight: 15 }}
+          >
+            <Text style={{ color: '#ffd33d', fontSize: 16, fontWeight: '600' }}>
+              Logout
+            </Text>
+          </Pressable>
+        ),
       }}
     >
       <Tabs.Screen
