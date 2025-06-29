@@ -23,6 +23,10 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
+    maxWidth: 480,
+    marginHorizontal: 'auto',
+    paddingHorizontal: 24,
     justifyContent: 'center',
     alignItems: 'center',
   }
