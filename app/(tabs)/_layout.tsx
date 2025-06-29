@@ -1,4 +1,5 @@
 import { Button, ButtonText } from '@/components/ui/button';
+import { Text } from '@/components/ui/text';
 import { useTheme } from '@/components/ui/ThemeProvider';
 import { useAuth } from '@/context/auth/AuthProvider';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -25,10 +26,22 @@ export default function TabLayout() {
             variant="link"
             onPress={logout}
             className="mr-4"
+            size="lg"
           >
             <ButtonText>Logout</ButtonText>
           </Button>
         ),
+        tabBarLabel: ({ focused, color }) => {
+          return (
+            <Text
+              size="md"
+              className={`${focused ? 'font-bold' : 'font-normal'}`}
+              style={{ color }}
+            >
+              {focused ? 'Home' : 'home'}
+            </Text>
+          );
+        },
       }}
     >
       <Tabs.Screen
@@ -47,6 +60,17 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24}/>
           ),
+          tabBarLabel: ({ focused, color }) => {
+            return (
+              <Text
+                size="md"
+                className={`${focused ? 'font-bold' : 'font-normal'}`}
+                style={{ color }}
+              >
+                {focused ? 'About' : 'about'}
+              </Text>
+            );
+          },
         }}
       />
     </Tabs>

@@ -28,7 +28,7 @@ export default function LoginScreen() {
         Welcome
       </Text>
       <Button 
-        size="lg"
+        size="xl"
         variant="solid"
         action="primary"
         onPress={login}
